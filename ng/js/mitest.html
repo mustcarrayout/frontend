@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>def getfiles(name)</title>
+</head>
+<body>
+	<script>
+		var module = [
+{'name':'jquery','src':'/js/lib/jquery-1.8.3.js'},
+{'name':'swfobject','src':'/js/utils/swfobject.js'},
+{'name':'fancybox','src':'/js/jquery/jquery.fancybox.js','require':['jquery']},
+{'name':'uploadify','src':'/js/utils/uploadify.js','require':['swfobject']},
+{'name':'jqform','src':'/js/jquery/jquery.form.js','require':['jquery']},
+{'name':'register','src':'/js/page/reg.js','require':['jqform']},
+{'name':'login','src':'/js/page/login.js','require':['fancybox','jqform']},
+{'name':'upload','src':'/js/page/upload.js','require':['fancybox','jqform','uploadify']}
+];
+		function getfiles (name) {
+			var ret = getName(name);
+			console.log(ret);
+			// for(var i =0 ;i < ret.length; i++){
+			// 	console.log((i + 1) + ' src is ' + ret[i]);
+			// }
+
+		}
+
+		function getName (name) {
+			var a = [];
+			var tmp = module.filter(function(item) {
+				if(item.name === name) {
+					return item;
+				}
+				return false;
+			});
+			//console.log('name is ' + name);
+			//console.log(tmp);
+			if(!tmp[0]['require']) {
+				a.push(tmp[0].src);
+				console.log(a);
+				return a;
+			} else{
+				var ss = tmp[0]['require'].map(function (i) {
+					return getName(i);
+				});
+				console.log(ss);
+			}
+		}
+
+		function getScript(src) {
+			var url = document.domain;
+			//console.log(url + src);
+			console.log(src);
+		}
+
+		getfiles('login');
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!-- 这个感觉没有实际意义，第一次输入了，然后第二次接着输入的时候就清空了 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>输入框聚焦和失焦事件应用</title>
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+<body>
+	<input type="text" id="search_input">
+	<script>
+		$("#search_input").focus(function(e){e.target.value = ''})
+			.blur(function(e){
+				//console.log(e.target.value.length);
+				return e.target.value.length == 0 ? e.target.value ='请搜索...' : false;
+			});
+		// $("#search_input")
+		//    .focus(function(){$(this).val('')})
+		//    .blur(function(){
+		//        var $this = $(this);
+		//       // '请搜索...'为搜索框默认值
+		//       ($this.val() === '')? $this.val('请搜索...') : null;
+		//  });
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+@charset "utf-8";
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #F1F2F6;
+    color: #434A54;
+    font: 12px/1.5 宋体;
+    font-family: Microsoft YaHei, SimHei, Verdana, Arial, sans-serif;
+    word-wrap: break-word; /* 这是什么 */
+}
+
+.bs-header {
+    position: relative;
+    height: 155px;
+}
+
+.header-logo {
+    height: 110px;
+}
+
+.header-login {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    right: 0;
+    top: 25px;
+}
+
+.login-span {
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.header-menu {
+    position: relative;
+    background: #b51c1c;
+    border-radius: 5px;
+    height: 45px;
+    overflow: hidden;
+    padding-left: 5px;
+}
+
+.menu-body > ul {
+    list-style: none;
+    display: inline-block;
+}
+
+.menu-body > ul > li {
+    font-size: 14px;
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    font-weight: normal;
+    float: left;
+}
+
+li > a {
+    float: left;
+    font-size: 16px;
+    display: block;
+    padding: 0 16px;
+    height: 100%;
+    color: #fff;
+    outline: medium none;
+}
+
+.a-focus {
+    background: #E40908;
+}
+
+a:hover {
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu-form {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.form-isea {
+    float: left;
+    background: transparent url('../img/searchIcon.png') no-repeat center;
+    width: 30px;
+    height: 26px;
+    padding: 0;
+    margin-top: 8px;
+    border-radius: 5px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.form-fast {
+    float: left;
+    width: 31px;
+    height: 26px;
+    line-height: 26px;
+    margin: 9px 10px 0 0;
+    padding: 0;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-radius: 5px;
+    background: url('../img/qmenu_xiaomi.png') center no-repeat;
+    text-indent: -9999px;
+}
+
+.bs-adborard {
+    height: 355px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.bs-adimage {
+    border-radius: 4px;
+}
+
+.bs-content {
+    width: 100%;
+    overflow: auto;
+}
+
+.left {
+    float: left;
+    width: 70%;
+    padding: 0 20px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.right {
+    float: right;
+    padding: 0;
+    overflow: hidden;
+}
+
+.ul-cont {
+    list-style: none;
+}
+.news li{
+    background: url("../img/newsLine.gif") no-repeat bottom;
+    padding-bottom: 30px;
+}
+.news{
+    padding: 0;
+    margin-bottom: 0;
+}
+.news a {
+    font-size: 12px;
+    color: rgb(102, 126, 189);
+    padding: 0;
+}
+h2 + a{
+    text-indent: 10px;
+    padding-right: 5px !important;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
+.li-img{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+}
+.li-img > img{
+    border-radius: 5px;
+}
+
+.news h2 > a {
+    font-size: 22px;
+    color: rgb(67, 74, 84);
+}
+
+li p {
+    font-size: 14px;
+    color: #5f5f5f;
+}
+p> a{
+   float: right;
+    font-size: 14px !important;
+}

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta> 元素可提供有关页面的元信息（meta-information），比如针对搜索引擎和更新频度的描述和关键词。
+<meta> 标签位于文档的头部，不包含任何内容。<meta> 标签的属性定义了与文档相关联的名称/值对。 -->
+	<meta>
+	<title>HTML中的标签</title>
+	<!-- base 设置默认的url a link img 等等有src的标签 -->
+	<base href="http://www.163.com">
+	<base target="_blank">
+	<!-- 规定页面上的默认字体颜色和字号 -->
+	<basefont color="red" size="5" face="Microsoft YaHei">
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.t2r{
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<a href="www.google.com">google</a>
+	<p>The <abbr title="People's Republic of China">PRC</abbr> was founded in 1949.</p>
+	<!-- HTML5中不支持 -->
+	<acronym title="World Wide Web">WWW</acronym>
+	<!-- address多用于语义表达，阔以表示为文章的作者联系方式(一般放在article中，HTML4中不支持article标签)或者是网站的联系方式 -->
+	<address>
+	Written by <a href="mailto:webmaster@example.com">Donald Duck</a>.<br> 
+	Visit us at:<br>
+	Example.com<br>
+	Box 564, Disneyland<br>
+	USA
+	</address>
+	<!-- HTML5不支持 要使用object标签 code中引用的是字节码文件 -->
+	<!-- <applet code="helloworld.class">
+		
+	</applet> -->
+	<!-- <img src="planets.jpg" border="0" usemap="#planetmap" alt="Planets" /> -->
+	<!-- FIXME:这个是个什么东西？ -->
+	<!-- area和map一起使用，不能独立使用 -->
+	<!-- <map name="planetmap" id="planetmap">
+	  <area shape="circle" coords="180,139,14" href ="venus.html" alt="Venus" />
+	  <area shape="circle" coords="129,161,10" href ="mercur.html" alt="Mercury" />
+	  <area shape="rect" coords="0,0,110,260" href ="sun.html" alt="Sun" />
+	</map> -->
+	<!-- 语义标签 -->
+	<article>
+  	<h1>Internet Explorer 9</h1>
+  	<p>Windows Internet Explorer 9（简称 IE9）于 2011 年 3 月 14 日发布.....</p>
+	</article>
+
+	<!-- aside 语义标签 标签定义其所处内容之外的内容  aside 的内容应该与附近的内容相关 可用作文章的侧栏-->
+	<p>Me and my family visited The Epcot center this summer.</p>
+	<aside>
+		<h4>Epcot Center</h4>
+		The Epcot Center is a theme park in Disney World, Florida.
+	</aside>
+
+	<!-- 标签定义声音，比如音乐或其他音频流 -->
+	<audio src="xxx.wav">您的浏览器不支持 audio 标签。</audio>
+
+	<!-- 都是加粗，strong主要是用于XHTML中的，b主要是用于web中的，没有严格区分，并不是相互取代的，使用谁都行，还有b是标签，strong是语义标签，它的作用是加强字符的语气。 -->
+	<strong>粗体</strong><b>粗体</b><b>粗体</b><strong>粗体</strong>
+	<a href="">netease</a>
+
+	<!-- <bdi> 标签允许您设置一段文本，使其脱离其父元素的文本方向设置,在发布用户评论或其他您无法完全控制的内容时，该标签很有用。 -->
+	<!-- <bdi dir="ltr|rtl|auto"> -->
+	<ul>
+		<li>Username <bdi>Bill</bdi>:80 points</li>
+		<li>Username <bdi>Steve</bdi>: 78 points</li>
+	</ul>
+
+	<!-- bdo 元素可覆盖默认的文本方向，文本方向不等于text-align -->
+	<bdo dir="rtl">
+		Here is some text
+	</bdo>
+	<p class="t2r">Here is some text</p>
+	
+	<!-- 以下的元素均是字体样式元素。我们并不被反对使用这些标签。但是如果您只是希望通过这些标签单纯地改变文本的样式，建议您使用样式表来取得更加丰富的效果。 -->
+	<i>斜体</i>
+	<big> 标签呈现大号字体效果。</big>
+	<small> 标签呈现小号字体效果。</small>
+	<b>粗体</b>
+	<tt>呈现类似打字机或者等宽的文本效果。</tt>
+
+	<!-- <blockquote> 标签定义块引用 -->
+	<blockquote>
+		Here is a long quotation here is a long quotation here is a long quotation 
+		here is a long quotation here is a long quotation here is a long quotation 
+		here is a long quotation here is a long quotation here is a long quotation.
+	</blockquote>
+	<!-- <blockquote> 与 </blockquote> 之间的所有文本都会从常规文本中分离出来，经常会在左、右两边进行缩进（增加外边距），而且有时会使用斜体。也就是说，块引用拥有它们自己的空间 -->
+	
+	<!-- <canvas> 标签定义图形，比如图表和其他图像。
+			 <canvas> 标签只是图形容器，您必须使用脚本来绘制图形。 -->
+	<canvas id="myCanvas">
+		
+	</canvas>
+	<script>
+		var canvas=document.getElementById('myCanvas');
+		var ctx=canvas.getContext('2d');
+		ctx.fillStyle='#FF0000';
+		ctx.fillRect(0,0,80,100);
+	</script>
+
+	<!-- caption 元素定义表格标题，caption 标签必须紧随 table 标签之后。您只能对每个表格定义一个标题。通常这个标题会被居中于表格之上 -->
+	<table border="1">
+	  <caption>Monthly savings</caption>
+	  <tr>
+	    <th>Month</th>
+	    <th>Savings</th>
+	  </tr>
+	  <tr>
+	    <td>January</td>
+	    <td>$100</td>
+	  </tr>
+	</table>
+	<!-- HTML5中不建议使用这个标签 已废弃-->
+	<center>center paragr</center>
+	<!-- 标签通常表示它所包含的文本对某个参考文献的引用，比如书籍或者杂志的标题 -->
+	<p>HTML5&CSS3 Designer<cite>--来自某个用户</cite></p>
+	
+	<!-- em strong dfn code samp kbd var cite -->
+	<code>function() {
+			console.log('123');
+	}</code>
+	
+	<!-- col 元素为表格中的三个列规定了不同的对齐方式 您只能在 table 或 colgroup 元素中使用 <col> 标签 -->
+	<table width="100%" border="1">
+	  <col align="left" />
+	  <col align="left" />
+	  <col align="right" />
+	  <tr>
+	    <th>ISBN</th>
+	    <th>Title</th>
+	    <th>Price</th>
+	  </tr>
+	  <tr>
+	    <td>3476896</td>
+	    <td>My first HTML</td>
+	    <td>$53</td>
+	  </tr>
+	</table>
+
+	<!-- colgroup <colgroup> 标签只能在 table 元素中使用 -->
+	<table width="100%" border="1">
+	  <colgroup span="2" align="left"></colgroup>
+	  <colgroup align="right" style="color:#0000FF;"></colgroup>
+	  <tr>
+	    <th>ISBN</th>
+	    <th>Title</th>
+	    <th>Price</th>
+	  </tr>
+	  <tr>
+	    <td>3476896</td>
+	    <td>My first HTML</td>
+	    <td>$53</td>
+	  </tr>
+	  <tr>
+	    <td>2489604</td>
+	    <td>My first CSS</td>
+	    <td>$47</td>
+	  </tr>
+	</table>
+
+	<!-- command 只有IE9支持 且必须放在menu标签下才能显示，menu dir已废弃-->
+	<!-- <menu>
+		<command>
+	</menu> -->
+
+	<!-- datalist 输入框下拉选择 相当于控件了 -->
+	<!-- <datalist> 标签定义选项列表。请与 input 元素配合使用该元素，来定义 input 可能的值。
+datalist 及其选项不会被显示出来，它仅仅是合法的输入值列表。
+请使用 input 元素的 list 属性来绑定 datalist。 -->
+	<input id="myCar" list="cars" />
+	<datalist id="cars">
+	  <option value="BMW">
+	  <option value="Ford">
+	  <option value="Volvo">
+	</datalist>
+	
+	<!-- dl dt dd 其实和ul差不多，也可以嵌套，自带上下级关系  -->
+	<dl>
+	   <dt>计算机</dt>
+	   <dd>用来计算的仪器 ... ...</dd>
+	   <dt>显示器</dt>
+	   <dd>以视觉方式显示信息的装置 ... ...</dd>
+	</dl>
+	<!-- del 删除线 ins下划线 -->
+	<del>删除线</del>
+
+	<!-- details 该标签支持不怎么好，chrome和safari支持 相当于手风琴 open默认设置是否可见-->
+	<details open="open">
+		<summary>Copyright 2011.</summary>
+		<p>All pages and graphics on this web site are the property of W3School.</p>
+	</details>
+	
+	<!-- embed <embed> 标签定义嵌入的内容，比如插件。例子引用一个flash type属性，放置的是MIME值-->
+	<embed src="helloworld.swf" />
+	
+	<!-- fieldset 相当于给form划分不同的区域 -->
+	<form>
+	  <fieldset>
+	    <legend>health information</legend>
+	    height: <input type="text" />
+	    weight: <input type="text" />
+	  </fieldset>
+	</form>
+
+	<!-- 用作文档中插图的图像，带有一个标题 -->
+	<!-- <figure> 标签规定独立的流内容（图像、图表、照片、代码等等）。
+figure 元素的内容应该与主内容相关，但如果被删除，则不应对文档流产生影响。 -->
+	<figure>
+	  <figcaption>黄浦江上的的卢浦大桥</figcaption>
+	  <img src="/i/shanghai_lupu_bridge.jpg" width="350" height="234" />
+	</figure>
+
+	<!-- footer 文档中的页脚部分-->
+	<footer>
+	  <p>Posted by: W3School</p>
+	  <p>Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</p>
+	</footer>
+
+	<!-- header 对主页的介绍： -->
+	<header>
+		<h1>Welcome to my homepage</h1>
+		<p>My name is Donald Duck</p>
+	</header>
+
+	<!-- <i> 标签显示斜体文本效果。
+<i> 标签和基于内容的样式标签 <em> 类似。它告诉浏览器将包含其中的文本以斜体字（italic）或者倾斜（oblique）字体显示。如果这种斜体字对该浏览器不可用的话，可以使用高亮、反白或加下划线等样式。 -->
+
+	<!-- <keygen> 标签规定用于表单的密钥对生成器字段。
+当提交表单时，私钥存储在本地，公钥发送到服务器。 -->
+	<form action="demo_keygen.asp" method="get">
+		Username: <input type="text" name="usr_name" />
+		Encryption: <keygen name="security" />
+		<input type="submit" />
+	</form>
+
+	<!-- mark 突出显示部分文本 <mark> 标签定义带有记号的文本。请在需要突出显示文本时使用 <m> 标签。加背景颜色 -->
+	<p>Do not forget to buy <mark>milk</mark> today.</p>
+	
+	<!-- meter 使用 meter 元素来度量给定范围（gauge）内的数据 -->
+	<meter value="3" min="0" max="10">十分之三</meter>
+	<meter value="0.6">60%</meter> 
+
+	<!-- 导航，其实就是ul的变形，语义标签 -->
+	<nav>
+		<a href="index.asp">Home</a>
+		<a href="html5_meter.asp">Previous</a>
+		<a href="html5_noscript.asp">Next</a>
+	</nav>
+	
+	<!-- noframes 不能识别frameset，即显示其body -->
+	<frameset cols = "25%, 25%,*">
+	  <noframes>
+	  <body>Your browser does not handle frames!</body>
+	  </noframes>
+	  <frame src ="venus.htm" />
+	  <frame src   ="sun.htm" />
+	  <frame src ="mercur.htm"   />
+	</frameset>
+	
+	<!-- object  -->
+	<!-- 定义一个嵌入的对象。请使用此元素向您的 XHTML 页面添加多媒体。此元素允许您规定插入 HTML 文档中的对象的数据和参数，以及可用来显示和操作数据的代码。
+<object> 标签用于包含对象，比如图像、音频、视频、Java applets、ActiveX、PDF 以及 Flash。
+object 的初衷是取代 img 和 applet 元素。不过由于漏洞以及缺乏浏览器支持，这一点并未实现。
+浏览器的对象支持有赖于对象类型。不幸的是，主流浏览器都使用不同的代码来加载相同的对象类型。
+而幸运的是，object 对象提供了解决方案。如果未显示 object 元素，就会执行位于 <object> 和 </object> 之间的代码。通过这种方式，我们能够嵌套多个 object 元素（每个对应一个浏览器）。 -->
+	<object classid="clsid:F08DF954-8592-11D1-B16A-00C0F0283628" id="Slider1" 
+width="100" height="50">
+	  <param name="BorderStyle" value="1" />
+	  <param name="MousePointer" value="0" />
+	  <param name="Enabled" value="1" />
+	  <param name="Min" value="0" />
+	  <param name="Max" value="10" />
+	</object>
+
+	<!-- 下拉框分组 -->
+	<select>
+	  <optgroup label="Swedish Cars">
+	    <option value="volvo">Volvo</option>
+	    <option value="saab">Saab</option>
+	  </optgroup>
+	  <optgroup label="German Cars">
+	    <option value="mercedes">Mercedes</option>
+	    <option value="audi">Audi</option>
+	  </optgroup>
+	</select>
+
+	 <!-- <output> 标签定义不同类型的输出，比如脚本的输出。 -->
+
+	 <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+	   <input type="range" id="a" value="50">100
+	   +<input type="number" id="b" value="50">
+	   =<output name="x" for="a b"></output>
+	</form>
+
+	<!-- 下载进度 <progress> 标签标示任务的进度（进程）。-->
+	<progress value="22" max="100"></progress>
+	
+	<!-- q添加引号 标签定义短的引用 浏览器经常在引用的内容周围添加引号 -->
+	<!-- <q> 标签在本质上与 <blockquote> 是一样的。不同之处在于它们的显示和应用。<q> 标签用于简短的行内引用。如果需要从周围内容分离出来比较长的部分（通常显示为缩进的块），请使用 <blockquote> 标签。 -->
+	<q>Here is a short quotation here is a short quotation</q>
+	
+	<!-- wbr 规定在文本中的何处适合添加换行符 -->
+	<!-- 不等同与br只是提示浏览器，单词过长，要在这里换行，如果页面足够显示就不换行 -->
+	<p>如果想学习 AJAX，那么您必须熟悉 XML<wbr>Http<wbr>Request 对象。</p>
+	<p>如果想学习 AJAX，那么您必须熟悉 XMLHttpRequest 对象。</p>
+	<!-- <video> 标签定义视频，比如电影片段或其他视频流。 -->
+	<video src="movie.ogg" controls="controls">
+		您的浏览器不支持video标签
+	</video>
+
+	<!-- ins u 都表示下划线 -->
+	<!-- HTML5中不支持u -->
+	<p>如果文本不是超链接，就不要<u>对其使用下划线</u>。</p>
+	<p>如果文本不是超链接，就不要<ins>对其使用下划线</ins>。</p>
+	
+	<!-- tt  -->
+	<tt> 标签呈现类似打字机或者等宽的文本效果。</tt>
+
+	<!-- <track> 标签为诸如 video 元素之类的媒介规定外部文本轨道。用于规定字幕文件或其他包含文本的文件，当媒介播放时，这些文件是可见的。 -->
+	<!-- <source> 标签为媒介元素（比如 <video> 和 <audio>）定义媒介资源。
+<source> 标签允许您规定可替换的视频/音频文件供浏览器根据它对媒体类型或者编解码器的支持进行选择。 -->
+	<video width="320" height="240" controls="controls">
+	  <source src="forrest_gump.mp4" type="video/mp4" />
+	  <source src="forrest_gump.ogg" type="video/ogg" />
+	  <track kind="subtitles" src="subs_chi.srt" srclang="zh" label="Chinese">
+	  <track kind="subtitles" src="subs_eng.srt" srclang="en" label="English">
+	</video>
+
+	<!-- time 主流浏览器不支持 -->
+	<p>我们在每天早上 <time>9:00</time> 开始营业。</p>
+	<p>我在 <time datetime="2008-02-14">情人节</time> 有个约会。</p>
+
+	<!-- 可以通过 cols 和 rows 属性来规定 textarea 的尺寸，不过更好的办法是使用 CSS 的 height 和 width 属性。 -->
+	<!-- 在文本输入区内的文本行间，用 "%OD%OA" （回车/换行）进行分隔。 -->
+	<!-- 还有讲究 -->
+	<textarea rows="3" cols="20">
+		在w3school，你可以找到你所需要的所有的网站建设教程。
+	</textarea>
+	
+	<!-- sup 相当于指数形式 占高度的一半 -->
+	<p>这段文本包含 <sup>上标</sup></p>
+
+	<details>
+		<summary>HTML 5</summary>
+		This document teaches you everything you have to learn about HTML 5.
+	</details>
+
+	<!-- sup 相当于底数形式 占高度的一半 -->
+	<p>这段文本包含 <sub>下标</sub></p>
+
+	<!-- strike s是strike缩写 最好使用 del -->
+	<p>Hello <strike>World!</strike></p>
+	<p>Hello <del>World!</del></p>
+	<p>Hello <s>World!</s></p>
+
+	<!-- div性质差不多 -->
+	<!-- <section> 标签定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。 -->
+	<section>
+  	<h1>PRC</h1>
+  	<p>The People's Republic of China was born in 1949...</p>
+	</section>
+	<div>
+  	<h1>PRC</h1>
+  	<p>The People's Republic of China was born in 1949...</p>
+	</div>
+
+	<!-- <ruby> 标签定义 ruby 注释（中文注音或字符）。
+在东亚使用，显示的是东亚字符的发音。
+与 <ruby> 以及 <rt> 标签一同使用：
+ruby 元素由一个或多个字符（需要一个解释/发音）和一个提供该信息的 rt 元素组成，还包括可选的 rp 元素，定义当浏览器不支持 "ruby" 元素时显示的内容。 -->
+	<ruby>
+		漢 <rt><rp>(</rp>ㄏㄢˋ<rp>)</rp></rt>
+	</ruby>
+	<hr>
+	<!-- 斜体 -->
+	<p>Hello <em>World!</em></p>
+	<p>Hello <i>World!</i></p>
+
+	<!-- 粗体 -->
+	<p>Hello <em><strong>World!</strong></em></p>
+	<p>Hello <i><b>World!</b></i></p>
+
+	<!-- dfn 也是斜体 -->
+	<p>Hello <dfn>World!</dfn></p>
+
+	<!-- 代码 -->
+	<code>
+		function sayHello(){
+			console.log('Hello World!');
+		}
+	</code>
+
+	<!-- <samp> 标签表示一段用户应该对其没有什么其他解释的文本字符。要从正常的上下文抽取这些字符时，通常要用到这个标签。 -->
+	<!-- 简单来说相当于转义字符，但是并没有转义 -->
+	<p>字符序列 <samp>ae</samp> 可能会被转换为 &aelig; 连字字符。</p>
+
+	<!-- 按键 -->
+	<p>键入 <kbd>quit</kbd> 来退出程序，或者键入 <kbd>menu</kbd> 来返回主菜单。</p>
+	
+	<!-- cite 引用 -->
+	<p>Hello world <cite>-- purple</cite></p>
+
+	<!-- <var> 标签表示变量的名称，或者由用户提供的值，一般和code pre一起使用 -->
+	<p>Hello <var>world</var></p>
+
+	<!-- pre 元素可定义预格式化的文本。被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。 -->
+	<pre>
+		&lt;html&gt;
+
+		&lt;head&gt;
+		  &lt;script type=&quot;text/javascript&quot; src=&quot;loadxmldoc.js&quot;&gt;
+		&lt;/script&gt;
+		&lt;/head&gt;
+
+		&lt;body&gt;
+
+		  &lt;script type=&quot;text/javascript&quot;&gt;
+		    xmlDoc=<a href="dom_loadxmldoc.asp">loadXMLDoc</a>(&quot;books.xml&quot;);
+		    document.write(&quot;xmlDoc is loaded, ready for use&quot;);
+		  &lt;/script&gt;
+
+		&lt;/body&gt;
+
+		&lt;/html&gt;
+	</pre>
+</body>
+</html>

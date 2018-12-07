@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字体</title>
+	<style>
+	/* font-style: italic(斜体) oblique(倾斜) normal(正常) */
+	/* font-variant: small-caps|normal; 把段落设置为小型大写字母字体 */
+
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		p{
+			/* 区别 oblique不会改变字体的粗细，而italic会*/
+			/*font-style: italic;*/
+			font-style: oblique;
+		}
+		p.small{
+			/* 大写字母依旧是大写字母 小写字母的话变成大写字母，但是小写字母的高度 */
+			font-variant:small-caps;
+			/*font-weight: normal|bold|bolder(更粗)|lighter(更细)|100(400=normal)-900(700=bold);*/
+		}
+
+	</style>
+</head>
+<body>
+	<p>Hello world</p>
+	<p class="small">hello world</p>
+</body>
+</html>

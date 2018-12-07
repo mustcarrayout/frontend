@@ -1,0 +1,23 @@
+<!-- 为了提高web性能，有更新时我们通常不会加载整个页面，而只是仅仅更新部分页面内容，如图片的延迟加载等。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>部分页面加载</title>
+	<style>
+		#content{
+			height: 400px;
+			background: #efefef;
+		}
+	</style>
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+	<div id="content"></div>
+	<script>
+	setInterval(function(){
+		$("#content").load('1.html');
+	}, 5000);
+	</script>
+</body>
+</html>

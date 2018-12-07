@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery的冲突处理</title>
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+	<div id="content"></div>
+	<script>
+		// 方式一
+		var $j = jQuery.noConflict();
+		$j("#content").text("hello world!");
+		// 方式二 推荐这种方式，不用使用额外的变量或者何从命名来调用jQuery
+		(function($){
+			$("#content").text("what the hell!");
+		})(jQuery);
+	</script>
+</body>
+</html>

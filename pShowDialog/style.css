@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.row{
+    width: 100%;
+}
+
+.p-cover{
+    height: 2000px;
+    width: 100%;
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background: #000;
+    opacity: 0.3;
+    z-index: 9999;
+    display: none;
+}
+
+.p-dialog{
+    background: #369;
+    position: fixed;
+    z-index: 10000;
+    width: 350px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-left: -175px;
+    margin-top: -100px;
+    color: #fff;
+    /*border-radius: 10px;*/
+
+}
+.t-hide{
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.t-show{
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+.dialog-wrapper{
+    /*position: relative;*/
+    /*margin: auto 100px;*/
+}
+
+.dialog-header{
+    height: 50px;
+}
+.dia-title {
+    line-height: 50px;
+    text-align: center;
+}
+
+.dia-close{
+    position: absolute;
+    line-height: 50px;
+    top: 0;
+    right: 30px;
+}
+
+.dialog-body{
+    height: 100px;
+}
+.dia-content{
+    padding: 10px 20px;
+    float: left;
+}
+
+.dialog-opg{
+    height: 50px;
+    /*right: 50px;*/
+    position: relative;
+}
+
+.dia-opg{
+    /*right: 50px;*/
+    padding: 10px 20px 20px;
+    float: right;
+    /*right: 40px;*/
+    /*margin-right: ;*/
+}
+.dia-opg > button:not(:last-child){
+    margin-right: 10px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>第一天</title>
+	<script src="..\angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" >
+		Hello {{'World'}}!
+	Hello <input type="text" ng-model="yourname" placeholder="input your name">
+	<hr>
+	<!-- || js中的优先符 -->
+	Hello {{yourname || ' world!'}}
+
+	<p>1 + 1 = {{1 + 1}}</p>
+	
+	<ul ng-controller="myCtrl">
+		<li ng-repeat="phone in phones">
+			{{ phone.name }}
+			<p>{{ phone.snippet }}</p>
+		</li>
+	</ul>
+
+	<table>
+    <tr><th>row number</th></tr>
+    <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{i + 1}}</td></tr>
+	</table>
+	<ul ng-init="persons=[{name:'heli', age:24}, {name:'liyuan', age: 17}, {name:'heyuan', age:19}]">
+		<li ng-repeat="person in persons">
+			{{ person.name }}
+			<p>{{ person.age }}</p>
+		</li>
+	</ul>
+	<div ng-init="firstname='lihe'">
+		<p>姓名为 <span ng-bind="firstname"></span></p>
+		<a href="#" ng-bind="firstname" ></a>
+	</div>
+	<span ng-bind="firstname"></span>
+	
+	<purpledirective></purpledirective>
+	<!-- 属性 -->
+	<div purpledirective></div>
+	<!-- 类名 必须要使用restrict:c -->
+	<div class="purpledirective"></div>
+	<!-- directive: purpledirective -->
+
+	</div>
+	
+
+	<!-- 第二个大的div木有实现AngularJS -->
+	<div ng-controller="sconde" ng-init="xingming='heli'">
+		<span ng-bind="firstname"></span>
+	</div>
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+		    $scope.phones= [
+		    {name:'Nexus S', snippet: 'nice cellphone'},
+		    {name:'Nexus 4', snippet: 'not bad'},
+		    {name:'Nexus 5', snippet: 'very fullen'}
+		    ];
+		});
+		app.directive("purpledirective", function() {
+		    return {
+		    		//restrict : "C",
+		    		// 这两个是使用注释来显示指令的 
+		    		// restrict: 'M',
+		    		// replace : true,
+		        template : "<h1>自定义指令!</h1>"
+		    };
+		});
+	</script>
+</body>
+</html>

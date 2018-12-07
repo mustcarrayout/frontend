@@ -1,0 +1,50 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.row{
+    width: 100%;
+}
+
+.pur-suc{
+    background: #33CC33;
+}
+
+.pur-err{
+    background: #CC3300;
+}
+
+.pur-info{
+    background: #0099CC;
+}
+
+.pur-warn{
+    background: #FF9933;
+}
+
+.pur-top-msg{
+    position: fixed;
+    height: 0;
+    width: 50%;
+    top: 3px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 5000;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.pur-top-msg > span{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    padding-left: 20px;
+}

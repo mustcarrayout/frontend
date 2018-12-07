@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float布局Demo</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0
+	}
+		.d1{
+			width: 100px;
+			height: 110px;
+			background: yellow;
+			float: left;
+			/*display: inline-block;*/
+		}
+		p{
+			background: #f00;
+		}
+		/*.d4:after{
+			clear: both;
+			content: '';
+		}*/
+		.d2{
+			width: 150px;
+			height: 20px;
+			background: SkyBlue;
+			float: left;
+		}
+		/*.d3{
+			width: 200px;
+			height: 230px;
+			background: pink;
+			clear: both;
+		}*/
+		/*z-index 只能和position一起使用才有效果*/
+		/*float设计的目的就是为了使文字包围图片，因为使用了float，文字就会围绕着float元素。相当于在一段文字中插入了图片，文字就会包围图片*/
+		/*float总结用途
+			1. float不会改变display属性值
+			2. float会脱离文档流
+			3. float会覆盖float元素的后边元素内容，
+			4. float如果和前元素是内联元素关系且无浮动的话，优先级高于前元素
+			5. 如果父元素不是固定尺寸，且当中的所有子元素都使用了float，那么该父元素就消失了，解决办法
+				|--父元素使用overflow: hidden;
+				|--父元素中使用伪类.fath{clear:both;display: block;}
+				|--在float元素之后增加一个空标签，clear: both;
+				|--设置clear属性，这个属性设置在受影响的元素（非父级）上
+				|--ie6中overflow不起作用需要zoom:1;
+		*/
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<div class="d1">
+		
+	</div>
+	<div class="d2">
+		
+	</div>
+	<!-- <div class="d3"></div> -->
+	<p>HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! HelloWorld! 10个HelloWorld！</p>
+<!-- 	<div class="d4">
+		
+	</div>	 -->
+	</div>
+	
+</body>
+</html>

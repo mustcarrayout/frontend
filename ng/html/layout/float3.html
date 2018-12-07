@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>添加一个空标签消除浮动</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.p1{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+		}
+		.p2{
+			width: 100px;
+			height: 100px;
+			background: SkyBlue;	
+			float: left;
+		}
+		.empty{
+			clear: both;
+			/*清除应用该选择器的标签的浮动*/
+		}
+		.p3{
+			width: 190px;
+			height: 100px;
+			background: pink;
+		}
+		.p4{
+			width: 200px;
+			height: 200px;
+			background: green;
+			float: left;
+		}
+		.p5{
+			width: 200px;
+			height: 200px;
+			background: gray;
+			float: left;	
+		}
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<div class="p1"></div>
+		<div class="p2"></div>
+		<div class="empty"></div>
+		<div class="p3"></div>
+		<div class="p4"></div>
+		<!-- <div class="empty"></div> -->
+		<div class="p5"></div>
+	</div>
+</body>
+</html>

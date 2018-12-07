@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>父元素:after&display:block使用伪类</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.big-box{
+			border: 3px solid #f00;
+		}
+		
+		.p1{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			float: left;
+		}
+		.p2{
+			width: 100px;
+			height: 100px;
+			background: SkyBlue;	
+			float: left;
+		}
+		.p3{
+			width: 100px;
+			height: 100px;
+			background: pink;
+			float: left;
+		}
+		.big-box:after{
+			content: '';
+			clear: both;
+			display: block;
+		}
+		/*清除浮动的目标：消除优先级高于该元素的浮动，并不是之后的标签浮动
+		浮动的本质是使文字围绕图片！*/
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<div class="p1">1</div>
+		<div class="p2">2</div>
+		<div class="p3">3</div>
+	</div>
+</body>
+</html>

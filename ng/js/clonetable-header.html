@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>将thead复制一份到tfoot上边，方便查看</title>
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+	<table id="my_table">
+		<thead>
+			<th>序号</th>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>年龄</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>lihe</td>
+				<td>man</td>
+				<td>24</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>lihe</td>
+				<td>man</td>
+				<td>24</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>lihe</td>
+				<td>man</td>
+				<td>24</td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		// 将thead中的tr复制到tfoot中，那么必然有thead，有木有tr呢？这是个问题，有的即使代码中木有加tr，DOM中也会自动加上的
+		
+		var $tfoot = $('<tfoot></tfoot>');
+		var $table = $('#my_table');
+		
+		// 如果不使用clone的话，就会将thead插入到tfoot中
+		$($('thead').clone(true, true).children().get()).each(function(){
+			$tfoot.append($(this));
+		});
+
+		$table.append($tfoot);
+	</script>
+</body>
+</html>
